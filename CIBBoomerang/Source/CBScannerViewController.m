@@ -83,7 +83,8 @@ NSString * const ScannerViewControllerStoryboardId = @"Scanner View Controller";
 - (void)configureOverlayView
 {
 	self.overlayView.layer.borderWidth = 2.f;
-	self.overlayView.layer.borderColor = [UIColor orangeColor].CGColor;    
+	self.overlayView.layer.borderColor = [UIColor orangeColor].CGColor;
+    self.overlayView.center = self.readerView.center;
 }
 
 #pragma mark - IBActions
