@@ -30,6 +30,7 @@
 
 @property (nonatomic, weak) IBOutlet id<CBCountriesRouteViewDataSource> dataSource;
 @property (nonatomic, weak) IBOutlet id<CBCountriesRouteViewDelegate> delegate;
+@property (nonatomic, strong) UIScrollView *scrollView;
 
 - (id)initWithCoder:(NSCoder *)aDecoder;
 

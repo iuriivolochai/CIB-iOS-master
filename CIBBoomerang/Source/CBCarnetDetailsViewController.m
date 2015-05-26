@@ -330,10 +330,18 @@ NSString *const CarnetDetailsViewControllerStoryboardId = @"Carnet Details View 
     self.statisticView.carnet = self.carnet;
     [self.statisticView refreshView];
 	
+    if([[UIDevice currentDevice] systemVersionGreaterOrEqual: 8.0]) //change due size of iphone 6/6plus
+    {
+        [self.countriesRouteView setFrame: CGRectMake(0,
+                                                  CGRectGetMinY(self.countriesRouteView.frame),
+                                                  self.view.frame.size.width,
+                                                      CGRectGetHeight(self.countriesRouteView.frame))];
+    }
+    
     [self.countriesRouteView reloadData];
     [self.tableView reloadData];
-
     [self recalculateMode];
+    
 }
 
 - (void)recalculateMode

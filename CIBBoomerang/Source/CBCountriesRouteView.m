@@ -24,10 +24,9 @@ static CGFloat kCountryViewWidth    = 37.f;
 
 @interface CBCountriesRouteView () <CBCountryViewDelegate, CBNewAlertListViewDataSource, CBNewAlertListViewDelegate>
 
-@property (nonatomic, strong) UIScrollView *scrollView;
+
 @property (nonatomic, strong) UIImageView *separator;
 @property (nonatomic, strong) UIButton *addButton;
-//@property (nonatomic, strong) CBAlertsListView *routeAlertView;
 @property (nonatomic, strong) CBNewAlertListView *  routeAlertView;
 @property (nonatomic, strong) CBCountryView         *selectedCoutryView;
 @property (nonatomic, strong) NSMutableArray        *alertsArray;
@@ -61,6 +60,20 @@ static CGFloat kCountryViewWidth    = 37.f;
     }
     
     return self;
+}
+
+- (void) layoutSubviews
+{
+    if([[UIDevice currentDevice] systemVersionGreaterOrEqual: 8.0])
+    {
+        CGRect scrollFrame = self.bounds;
+        scrollFrame.size.height = kScrollSizeHeigth;
+        [self.scrollView setFrame: scrollFrame];
+    }
+    else
+    {
+        [super layoutSubviews];
+    }
 }
 
 - (void)reloadData
@@ -278,7 +291,7 @@ static CGFloat kCountryViewWidth    = 37.f;
 {
     if (!_routeAlertView) {
         _routeAlertView = [[CBNewAlertListView alloc] initWithFrame:CGRectMake(0., 0., 320., 135)];
-		[_routeAlertView setBackgroundColor:[UIColor whiteColor]];
+        [_routeAlertView setBackgroundColor:[UIColor whiteColor]];
         _routeAlertView.dataSource = self;
     }
     return _routeAlertView;
