@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="54J-j0-oop">
+    <dependencies>
+        <deployment defaultVersion="1280" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="RaR-0R-v54">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="54J-j0-oop" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8Jx-Jf-w7n">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="fWJ-C2-vPI" kind="relationship" relationship="rootViewController" id="BzV-4Y-RC1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gUW-e0-jlt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="107" y="53"/>
+        </scene>
+        <!--Fake Location Auth View Controller - Authorization-->
+        <scene sceneID="uOr-rs-DZC">
+            <objects>
+                <viewController title="Authorization" id="fWJ-C2-vPI" customClass="CBFakeLocationAuthViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d9z-EZ-DuJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" id="9GY-Z7-cRF">
+                                <rect key="frame" x="20" y="170" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="insetFor6xAndEarlier" minX="0.0" minY="64" maxX="0.0" maxY="-64"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="fWJ-C2-vPI" id="xLN-Wf-NOh"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Authorization" id="Y8V-tV-EtE">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" style="plain" id="eLi-mj-zCe">
+                            <connections>
+                                <action selector="cancelDidPress:" destination="fWJ-C2-vPI" id="9rg-5a-rua"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="passwordTextField" destination="9GY-Z7-cRF" id="Ffb-eM-E9I"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B9c-P4-Hdk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="675" y="61"/>
+        </scene>
+        <!--Fake Locations View Controller - Fake Location-->
+        <scene sceneID="ueR-LR-KCj">
+            <objects>
+                <viewController storyboardIdentifier="CBFakeLocationsViewController" id="5sQ-mF-JRT" customClass="CBFakeLocationsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PCO-a0-W5s">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="NnC-xg-htu">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="gqY-lJ-xgK">
+                                    <rect key="frame" x="0.0" y="63.999999999999993" width="320" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <searchBar contentMode="redraw" id="GUO-iL-fJy">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="5sQ-mF-JRT" id="YAa-Fo-N9m"/>
+                                            </connections>
+                                        </searchBar>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="fakeLocationCell" id="tC4-UT-G3x" customClass="CBFakeLocationTableViewCell">
+                                        <rect key="frame" x="0.0" y="130" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tC4-UT-G3x" id="xgp-0i-au1">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Vtg-Se-QOT">
+                                                    <rect key="frame" x="20" y="0.0" width="263" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-solicit-checkmark.png" id="Fqs-zq-8Bs">
+                                                    <rect key="frame" x="291" y="13" width="19" height="18"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="checkImageView" destination="Fqs-zq-8Bs" id="1rx-vn-7mF"/>
+                                            <outlet property="label" destination="Vtg-Se-QOT" id="Aag-Og-3gK"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="5sQ-mF-JRT" id="lGk-K5-1pY"/>
+                                    <outlet property="delegate" destination="5sQ-mF-JRT" id="c0x-ts-jvO"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" id="aoB-cG-0jy" userLabel="bottomBar">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg-bottom-bar-normal.png" id="ot7-Cx-PTD">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Current fake location:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OVq-mQ-TAJ" userLabel="bottomLbl">
+                                        <rect key="frame" x="18" y="11" width="143" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="HHU-Ei-PZD" userLabel="addButton">
+                                        <rect key="frame" x="259" y="6" width="59" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="-1" maxX="0.0" maxY="0.0"/>
+                                        <size key="titleShadowOffset" width="0.0" height="-2"/>
+                                        <state key="normal" title="Disable">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="disableFakeLocationButtonTapped:" destination="5sQ-mF-JRT" eventType="touchUpInside" id="cjw-Gn-flJ"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Abc" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" id="oCG-bc-mU9">
+                                        <rect key="frame" x="164" y="11" width="90" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Fake Location" id="mfT-qE-3WZ"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="currentFakeLocationLabel" destination="oCG-bc-mU9" id="PpA-dz-XWv"/>
+                        <outlet property="enableFakeLocationButton" destination="HHU-Ei-PZD" id="5iJ-Pi-cax"/>
+                        <outlet property="fakeLocationView" destination="aoB-cG-0jy" id="yr0-Vx-QZo"/>
+                        <outlet property="searchDisplayController" destination="FLX-ec-mpE" id="HAb-Rx-DwJ"/>
+                        <outlet property="tableView" destination="NnC-xg-htu" id="eB0-PG-sAK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R5J-1Q-Kgc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="76M-2F-tRH">
+                    <connections>
+                        <outlet property="delegate" destination="5sQ-mF-JRT" id="JWb-nl-8L7"/>
+                        <outlet property="searchContentsController" destination="5sQ-mF-JRT" id="Fmx-7E-cjR"/>
+                        <outlet property="searchResultsDataSource" destination="5sQ-mF-JRT" id="cUV-Hh-6v6"/>
+                        <outlet property="searchResultsDelegate" destination="5sQ-mF-JRT" id="WVd-a5-ziV"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="bca-2z-0qj">
+                    <connections>
+                        <outlet property="delegate" destination="5sQ-mF-JRT" id="E5u-IH-YxV"/>
+                        <outlet property="searchContentsController" destination="5sQ-mF-JRT" id="znz-dx-Ttj"/>
+                        <outlet property="searchResultsDataSource" destination="5sQ-mF-JRT" id="WlY-ud-D3S"/>
+                        <outlet property="searchResultsDelegate" destination="5sQ-mF-JRT" id="JWt-MM-AdF"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="Rcd-rt-8Vv">
+                    <connections>
+                        <outlet property="delegate" destination="5sQ-mF-JRT" id="6BX-Mr-2zf"/>
+                        <outlet property="searchContentsController" destination="5sQ-mF-JRT" id="O31-hn-hW8"/>
+                        <outlet property="searchResultsDataSource" destination="5sQ-mF-JRT" id="Jpb-XX-CUN"/>
+                        <outlet property="searchResultsDelegate" destination="5sQ-mF-JRT" id="Rzk-hz-Uiy"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="FLX-ec-mpE">
+                    <connections>
+                        <outlet property="delegate" destination="5sQ-mF-JRT" id="gBp-GF-fjx"/>
+                        <outlet property="searchBar" destination="GUO-iL-fJy" id="D1u-xq-kl0"/>
+                        <outlet property="searchContentsController" destination="5sQ-mF-JRT" id="C5j-Uw-gv0"/>
+                        <outlet property="searchResultsDataSource" destination="5sQ-mF-JRT" id="wBq-Db-ZhA"/>
+                        <outlet property="searchResultsDelegate" destination="5sQ-mF-JRT" id="v0A-Ah-cgT"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="1201" y="61"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bg-bottom-bar-normal.png" width="320" height="44"/>
+        <image name="icon-solicit-checkmark.png" width="19" height="18"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

@@ -1,0 +1,26 @@
+//
+// Prefix header for all source files of the 'CIBBoomerang' target in the 'CIBBoomerang' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import <CoreData/CoreData.h>
+    #import "CBTypes.h"
+    #import "CBConstants.h"
+    #import "CBFontUtils.h"
+	#import "CBSettings.h"
+    #import "CBSoundUtils.h"
+    #import "CBReachabilityObserver.h"
+    #import "SVProgressHUD.h"
+    #import "NSDate+CLRTicks.h"
+    #import "UIDevice-Hardware.h"
+    #import "DDLog.h"
+#endif
+

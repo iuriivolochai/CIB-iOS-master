@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13C1021" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="DMCarnet" representedClassName="DMCarnet" syncable="YES">
+        <attribute name="accountNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="carnetStatus" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="dateExpired" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="dateIssued" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="flagActive" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="flagVerified" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="foilsBlue" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="foilsWhite" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="foilsYellow" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="guid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="identifier" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="issuedBy" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trackedByDeviceId" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="activeWaypoint" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="DMWaypoint" inverseName="activeForCarnet" inverseEntity="DMWaypoint" syncable="YES"/>
+        <relationship name="alerts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="DMSimpleAlert" inverseName="carnet" inverseEntity="DMSimpleAlert" syncable="YES"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DMItem" inverseName="carnet" inverseEntity="DMItem" syncable="YES"/>
+        <relationship name="waypoints" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="DMWaypoint" inverseName="carnet" inverseEntity="DMWaypoint" syncable="YES"/>
+    </entity>
+    <entity name="DMCheckpoint" representedClassName="DMCheckpoint" syncable="YES">
+        <attribute name="altitude" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="ident" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="alert" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DMCheckpointAlert" inverseName="checkpoint" inverseEntity="DMCheckpointAlert" syncable="YES"/>
+        <relationship name="country" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DMCountry" inverseName="checkpoints" inverseEntity="DMCountry" syncable="YES"/>
+    </entity>
+    <entity name="DMCheckpointAlert" representedClassName="DMCheckpointAlert" syncable="YES">
+        <attribute name="showingDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="shown" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="checkpoint" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DMCheckpoint" inverseName="alert" inverseEntity="DMCheckpoint" syncable="YES"/>
+    </entity>
+    <entity name="DMCountry" representedClassName="DMCountry" syncable="YES">
+        <attribute name="code" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="identifier" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="name" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="supportsCarnet" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="alert" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="DMCountryAlert" inverseName="country" inverseEntity="DMCountryAlert" syncable="YES"/>
+        <relationship name="checkpoints" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DMCheckpoint" inverseName="country" inverseEntity="DMCheckpoint" syncable="YES"/>
+        <relationship name="waypoints" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DMWaypoint" inverseName="country" inverseEntity="DMWaypoint" syncable="YES"/>
+    </entity>
+    <entity name="DMCountryAlert" representedClassName="DMCountryAlert" syncable="YES">
+        <attribute name="showingDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="shown" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="country" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="DMCountry" inverseName="alert" inverseEntity="DMCountry" syncable="YES"/>
+    </entity>
+    <entity name="DMItem" representedClassName="DMItem" syncable="YES">
+        <attribute name="identifier" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="quantity" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="specification" attributeType="String" syncable="YES"/>
+        <attribute name="splitted" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="weight" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
+        <relationship name="carnet" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="DMCarnet" inverseName="items" inverseEntity="DMCarnet" syncable="YES"/>
+        <relationship name="waypoint" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="DMWaypoint" inverseName="items" inverseEntity="DMWaypoint" syncable="YES"/>
+    </entity>
+    <entity name="DMLocationAlert" representedClassName="DMLocationAlert" syncable="YES">
+        <attribute name="showingDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="shown" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="waypoint" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="DMWaypoint" inverseName="alerts" inverseEntity="DMWaypoint" syncable="YES"/>
+    </entity>
+    <entity name="DMSimpleAlert" representedClassName="DMSimpleAlert" syncable="YES">
+        <attribute name="showingDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="shown" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="carnet" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="DMCarnet" inverseName="alerts" inverseEntity="DMCarnet" syncable="YES"/>
+    </entity>
+    <entity name="DMWaypoint" representedClassName="DMWaypoint" syncable="YES">
+        <attribute name="containsError" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="dateArrival" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="dateDeparture" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="kind" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="activeForCarnet" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="DMCarnet" inverseName="activeWaypoint" inverseEntity="DMCarnet" syncable="YES"/>
+        <relationship name="alerts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DMLocationAlert" inverseName="waypoint" inverseEntity="DMLocationAlert" syncable="YES"/>
+        <relationship name="carnet" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="DMCarnet" inverseName="waypoints" inverseEntity="DMCarnet" syncable="YES"/>
+        <relationship name="country" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="DMCountry" inverseName="waypoints" inverseEntity="DMCountry" syncable="YES"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DMItem" inverseName="waypoint" inverseEntity="DMItem" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="DMCarnet" positionX="0" positionY="0" width="128" height="315"/>
+        <element name="DMCountry" positionX="0" positionY="0" width="128" height="148"/>
+        <element name="DMCountryAlert" positionX="0" positionY="0" width="128" height="105"/>
+        <element name="DMItem" positionX="0" positionY="0" width="128" height="165"/>
+        <element name="DMLocationAlert" positionX="0" positionY="0" width="128" height="105"/>
+        <element name="DMSimpleAlert" positionX="0" positionY="0" width="128" height="105"/>
+        <element name="DMWaypoint" positionX="0" positionY="0" width="128" height="195"/>
+        <element name="DMCheckpoint" positionX="27" positionY="162" width="128" height="178"/>
+        <element name="DMCheckpointAlert" positionX="45" positionY="171" width="128" height="103"/>
+    </elements>
+</model>
