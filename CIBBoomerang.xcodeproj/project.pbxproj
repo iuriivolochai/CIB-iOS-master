@@ -111,6 +111,9 @@
 		CAE91D8F1768929E004AB6DF /* buble_speech1.png in Resources */ = {isa = PBXBuildFile; fileRef = CAE91D8C1768929E004AB6DF /* buble_speech1.png */; };
 		CAE91D901768929E004AB6DF /* buble_speech2.png in Resources */ = {isa = PBXBuildFile; fileRef = CAE91D8D1768929E004AB6DF /* buble_speech2.png */; };
 		CAE91D911768929E004AB6DF /* text_field.png in Resources */ = {isa = PBXBuildFile; fileRef = CAE91D8E1768929E004AB6DF /* text_field.png */; };
+		DB8858171B145A1500A2D319 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB8858161B145A1500A2D319 /* Images.xcassets */; };
+		DB88581A1B145A8900A2D319 /* Default-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB8858181B145A8900A2D319 /* Default-667h@2x.png */; };
+		DB88581B1B145A8900A2D319 /* Default-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB8858191B145A8900A2D319 /* Default-736h@3x.png */; };
 		E001425A17E216BD009A9081 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E001425917E216BD009A9081 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		E001E894175619BB009252DD /* Bar-Button-Done@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E001E893175619BB009252DD /* Bar-Button-Done@2x.png */; };
 		E001E8A2175621D5009252DD /* bg-details-table-header.png in Resources */ = {isa = PBXBuildFile; fileRef = E001E897175621D4009252DD /* bg-details-table-header.png */; };
@@ -501,6 +504,9 @@
 		CAE91D8C1768929E004AB6DF /* buble_speech1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buble_speech1.png; path = Resources/buble_speech1.png; sourceTree = "<group>"; };
 		CAE91D8D1768929E004AB6DF /* buble_speech2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buble_speech2.png; path = Resources/buble_speech2.png; sourceTree = "<group>"; };
 		CAE91D8E1768929E004AB6DF /* text_field.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = text_field.png; path = Resources/text_field.png; sourceTree = "<group>"; };
+		DB8858161B145A1500A2D319 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		DB8858181B145A8900A2D319 /* Default-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-667h@2x.png"; path = "Icons&Defaults/Default-667h@2x.png"; sourceTree = "<group>"; };
+		DB8858191B145A8900A2D319 /* Default-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-736h@3x.png"; path = "Icons&Defaults/Default-736h@3x.png"; sourceTree = "<group>"; };
 		E001425917E216BD009A9081 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		E001E893175619BB009252DD /* Bar-Button-Done@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Bar-Button-Done@2x.png"; path = "Resources/Bar-Button-Done@2x.png"; sourceTree = "<group>"; };
 		E001E897175621D4009252DD /* bg-details-table-header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg-details-table-header.png"; path = "Resources/bg-details-table-header.png"; sourceTree = "<group>"; };
@@ -1806,6 +1812,7 @@
 				E0FD15A01726831700990744 /* Icons&Defaults */,
 				E0FD15621726823C00990744 /* Supporting Files */,
 				E0FD15C61726929200990744 /* Utils */,
+				DB8858161B145A1500A2D319 /* Images.xcassets */,
 			);
 			path = CIBBoomerang;
 			sourceTree = "<group>";
@@ -1844,6 +1851,8 @@
 		E0FD15A01726831700990744 /* Icons&Defaults */ = {
 			isa = PBXGroup;
 			children = (
+				DB8858181B145A8900A2D319 /* Default-667h@2x.png */,
+				DB8858191B145A8900A2D319 /* Default-736h@3x.png */,
 				E0FD15BE172686B800990744 /* Icon-Small.png */,
 				E0FD15BF172686B900990744 /* Icon-Small@2x.png */,
 				E0FD15B81726863800990744 /* Icon.png */,
@@ -2117,6 +2126,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0FD15661726823C00990744 /* InfoPlist.strings in Resources */,
+				DB8858171B145A1500A2D319 /* Images.xcassets in Resources */,
 				E0FD15751726823C00990744 /* MainStoryboard.storyboard in Resources */,
 				CA80AD0D1815527C0014DA5C /* btn_chat.png in Resources */,
 				E0FD15A41726832700990744 /* Default-568h@2x.png in Resources */,
@@ -2168,6 +2178,7 @@
 				E018C33A1755FB3F000E4646 /* icon-soliciting-purpose.png in Resources */,
 				E018C33B1755FB3F000E4646 /* icon-soliciting-purpose@2x.png in Resources */,
 				E018C33C1755FB3F000E4646 /* icon-soliciting-star.png in Resources */,
+				DB88581B1B145A8900A2D319 /* Default-736h@3x.png in Resources */,
 				E018C33D1755FB3F000E4646 /* icon-soliciting-star@2x.png in Resources */,
 				E0CB629F17560720003A6ACB /* bg-navigation-bar-pattern.png in Resources */,
 				E0CB62A017560720003A6ACB /* bg-navigation-bar-pattern@2x.png in Resources */,
@@ -2214,6 +2225,7 @@
 				CAE9177F17575FD0004AB6DF /* btn-solicit-left.png in Resources */,
 				CAE9178017575FD0004AB6DF /* btn-solicit-left@2x.png in Resources */,
 				CAE9178117575FD0004AB6DF /* btn-solicit-right.png in Resources */,
+				DB88581A1B145A8900A2D319 /* Default-667h@2x.png in Resources */,
 				CAA8762D1811967B00CBF353 /* btn_settings@2x.png in Resources */,
 				CAE9178417576162004AB6DF /* btn-solicit-right@2x.png in Resources */,
 				E00BB6271757AD58003BDC41 /* btn-route-final.png in Resources */,
@@ -2506,6 +2518,8 @@
 		E070A14E173D4B7100A177FE /* Ad Hoc */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_RESOURCE_RULES_PATH = "$(SDKROOT)/ResourceRules.plist";
@@ -2604,6 +2618,8 @@
 		E0FD15981726823C00990744 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Odin Volochai (G823YG37U8)";
 				CODE_SIGN_RESOURCE_RULES_PATH = "$(SDKROOT)/ResourceRules.plist";
@@ -2642,6 +2658,8 @@
 		E0FD15991726823C00990744 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_RESOURCE_RULES_PATH = "$(SDKROOT)/ResourceRules.plist";
