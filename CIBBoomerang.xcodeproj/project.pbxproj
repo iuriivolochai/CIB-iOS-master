@@ -114,6 +114,7 @@
 		DB8858171B145A1500A2D319 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB8858161B145A1500A2D319 /* Images.xcassets */; };
 		DB88581A1B145A8900A2D319 /* Default-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB8858181B145A8900A2D319 /* Default-667h@2x.png */; };
 		DB88581B1B145A8900A2D319 /* Default-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB8858191B145A8900A2D319 /* Default-736h@3x.png */; };
+		DB88581D1B145E4900A2D319 /* CBCarnetViewi8.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB88581C1B145E4900A2D319 /* CBCarnetViewi8.xib */; };
 		E001425A17E216BD009A9081 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E001425917E216BD009A9081 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		E001E894175619BB009252DD /* Bar-Button-Done@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E001E893175619BB009252DD /* Bar-Button-Done@2x.png */; };
 		E001E8A2175621D5009252DD /* bg-details-table-header.png in Resources */ = {isa = PBXBuildFile; fileRef = E001E897175621D4009252DD /* bg-details-table-header.png */; };
@@ -507,6 +508,7 @@
 		DB8858161B145A1500A2D319 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DB8858181B145A8900A2D319 /* Default-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-667h@2x.png"; path = "Icons&Defaults/Default-667h@2x.png"; sourceTree = "<group>"; };
 		DB8858191B145A8900A2D319 /* Default-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-736h@3x.png"; path = "Icons&Defaults/Default-736h@3x.png"; sourceTree = "<group>"; };
+		DB88581C1B145E4900A2D319 /* CBCarnetViewi8.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CBCarnetViewi8.xib; path = Source/CBCarnetViewi8.xib; sourceTree = "<group>"; };
 		E001425917E216BD009A9081 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		E001E893175619BB009252DD /* Bar-Button-Done@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Bar-Button-Done@2x.png"; path = "Resources/Bar-Button-Done@2x.png"; sourceTree = "<group>"; };
 		E001E897175621D4009252DD /* bg-details-table-header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg-details-table-header.png"; path = "Resources/bg-details-table-header.png"; sourceTree = "<group>"; };
@@ -1734,6 +1736,7 @@
 		E0F1F1FA1779DB8A0010CE75 /* Carnet View */ = {
 			isa = PBXGroup;
 			children = (
+				DB88581C1B145E4900A2D319 /* CBCarnetViewi8.xib */,
 				E0F1F1F71779DB850010CE75 /* CBCarnetView.h */,
 				E0F1F1F81779DB850010CE75 /* CBCarnetView.m */,
 				E0F1F1FB1779DBA40010CE75 /* CBCarnetView.xib */,
@@ -2232,6 +2235,7 @@
 				E00BB6281757AD58003BDC41 /* btn-route-final@2x.png in Resources */,
 				E00BB6351757B9DA003BDC41 /* bg-bottom-split.png in Resources */,
 				E00BB6361757B9DA003BDC41 /* bg-bottom-split@2x.png in Resources */,
+				DB88581D1B145E4900A2D319 /* CBCarnetViewi8.xib in Resources */,
 				E00BB6371757B9DA003BDC41 /* btn-bottom-split.png in Resources */,
 				E00BB6381757B9DA003BDC41 /* btn-bottom-split@2x.png in Resources */,
 				E00BB6391757B9DA003BDC41 /* icon-bottom-split.png in Resources */,

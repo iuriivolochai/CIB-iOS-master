@@ -56,9 +56,19 @@
 
 - (void)loadFromNib
 {
-    [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class])
+    if(![[UIDevice currentDevice] systemVersionGreaterOrEqual: 8.0])
+    {
+        [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class])
                                   owner:self
                                 options:nil];
+    }
+    else
+    {
+        [[NSBundle mainBundle] loadNibNamed: @"CBCarnetViewi8"
+                                      owner:self
+                                    options:nil];
+    }
+    
     [self addSubview:self.contentView];
 }
 
