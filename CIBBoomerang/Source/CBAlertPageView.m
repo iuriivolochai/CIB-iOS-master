@@ -33,6 +33,10 @@
                                                       owner:self
                                                     options:nil] lastObject];
         [self addSubview:view];
+        if ([[UIDevice currentDevice] systemVersionGreaterOrEqual:8.0]) //support iPhone 6/6Plus sizes
+        {
+            [view setFrame:self.bounds];
+        }
         self.alertTextLabel.font = [CBFontUtils droidSansFontBold:YES ofSize:15];
         _buttonsArray = [NSMutableArray arrayWithCapacity:2];
     }

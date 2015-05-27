@@ -290,8 +290,9 @@ static CGFloat kCountryViewWidth    = 37.f;
 - (CBNewAlertListView *)routeAlertView
 {
     if (!_routeAlertView) {
-        _routeAlertView = [[CBNewAlertListView alloc] initWithFrame:CGRectMake(0., 0., 320., 135)];
+        _routeAlertView = [[CBNewAlertListView alloc] initWithFrame:CGRectMake(0., 0., CGRectGetWidth(self.frame), 135)];
         [_routeAlertView setBackgroundColor:[UIColor whiteColor]];
+//        [_routeAlertView setBackgroundColor:[UIColor greenColor]];
         _routeAlertView.dataSource = self;
     }
     return _routeAlertView;

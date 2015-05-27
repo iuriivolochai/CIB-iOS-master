@@ -25,6 +25,7 @@
     if (self) {
         UIView *view = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:self options:nil] lastObject];
         [self addSubview:view];
+        [view setFrame: self.bounds];
         _recycledView.dataSource    = self;
         _recycledView.scrollEnabled = NO;
     }
@@ -39,6 +40,7 @@
         [self addSubview:view];
         _recycledView.dataSource    = self;
         _recycledView.scrollEnabled = NO;
+        
 }
     return self;
 }
@@ -70,7 +72,8 @@
 {
     CBAlertPageView *tileView = (CBAlertPageView *)[scrollView dequeueRecycledTileView];
     if (!tileView) {
-        tileView = [[CBAlertPageView alloc] initWithFrame:CGRectMake(0., 0., 100., CGRectGetHeight(scrollView.bounds))];
+//        tileView = [[CBAlertPageView alloc] initWithFrame:CGRectMake(0., 0., 100., CGRectGetHeight(scrollView.bounds))];
+        tileView = [[CBAlertPageView alloc] initWithFrame:CGRectMake(0., 0., CGRectGetWidth(scrollView.bounds), CGRectGetHeight(scrollView.bounds))];
         tileView.delegate = self;
     }
     return tileView;
