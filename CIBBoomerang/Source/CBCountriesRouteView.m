@@ -218,6 +218,12 @@ static CGFloat kCountryViewWidth    = 37.f;
         self.frame = frame;
         CGRect separatorFrame = CGRectMake(0.f, CGRectGetMaxY(self.bounds) - 1,
                                            (self.scrollView.contentSize.width > 320.f) ? self.scrollView.contentSize.width : 320.f, 1.f);
+        
+        if ([[UIDevice currentDevice] systemVersionGreaterOrEqual:8.0]) // fix separator for  iPhone6/6Plus
+        {
+            separatorFrame.size.width = self.bounds.size.width;
+        }
+        
         self.separator = [[UIImageView alloc] initWithFrame:separatorFrame];
         self.separator.image = [UIImage imageNamed:@"bg-soliciting-separator"];
         [self addSubview:self.separator];
